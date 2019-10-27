@@ -1,21 +1,22 @@
 var http = require('http');
 var path = require('path');
-var express = require("express");
+const express = require("express");
 var bodyParser = require("body-parser");
-var app = express();
-var port = process.env.PORT || 3000;
+const app = express();
+const port = process.env.PORT || 3000;
 const fetch = require('node-fetch');
 
 
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(express.static("public"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
 // var task = ["bark", "meow"];
 // var complete = ["eat", "sleep"];
 
-var url = 'https://xkcd.com/info.0.json';
+//var url = 'https://xkcd.com/info.0.json';
 var cTitle = '';
 var year = '';
 var image = '';
@@ -24,7 +25,7 @@ app.get('/', function(req, res)
 {
     // res.render("index");
     comic(true);
-    res.render('index',{title:cTitle, year:year, image:image});
+    res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
 {
@@ -34,14 +35,14 @@ app.get('/randomComic', function(req, res)
 function comic(something){
     var comic = 'https://xkcd.com/info.0.json';
     //var randNum = rand(1,2208);
-    var randComic = 'https://xkcd.com/'+ rand(1,2208) + '/info.0.json';
+    var randComic = 'http://xkcd.com/'+ rand(1,2208) + '/info.0.json';
     fetch(something ? comic : randComic)
         .then(res => res.json())
         .then(json =>{
             cTitle = json.title;
             year = json.year;
             image = json.img;
-            console.log(json);
+            //console.log(json);
         });
 }
 http.createServer(app).listen(port, function()
