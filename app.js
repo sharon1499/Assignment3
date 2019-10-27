@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({ encoded: false}));
 // var complete = ["eat", "sleep"];
 
 var url = 'https://xkcd.com/info.0.json';
-var cTitle;
-var year;
-var image;
+var cTitle = '';
+var year = '';
+var image = '';
 
 app.get('/', function(req, res)
 {
