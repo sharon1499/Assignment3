@@ -1,0 +1,30 @@
+{
+  "name": "assignment3",
+  "version": "1.0.0",
+  "description": "this is an example",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharon1499/Assignment3.git"
+  },
+  "author": "sharon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharon1499/Assignment3/issues"
+  },
+  "homepage": "https://github.com/sharon1499/Assignment3#readme",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.6",
+    "node-fetch": "^2.6.0"
+  }
+}

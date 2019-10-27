@@ -1,0 +1,32 @@
+var http = require('http');
+var path = require('path');
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+var port = process.env.PORT || 3000;
+
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", 'ejs');
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ encoded: true}));
+
+// var task = ["bark", "meow"];
+// var complete = ["eat", "sleep"];
+
+app.get('/', function(req, res)
+{
+    res.send("Hello World");
+});
+app.get('/Page2', function(req, res)
+{
+    res.send("Hello World");
+});
+app.get('Page3', function(req, res)
+{
+    res.send("Hello World");
+});
+
+http.createServer(app).listen(port, function()
+{
+
+});
