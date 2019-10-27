@@ -4,6 +4,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 var port = process.env.PORT || 3000;
+const fetch = require('node-fetch');
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
@@ -17,14 +19,19 @@ app.get('/', function(req, res)
 {
     res.render("index");
 });
-app.get('/Page2', function(req, res)
+app.get('/random', function(req, res)
 {
     res.render("index");
 });
-app.get('Page3', function(req, res)
-{
-    res.send("Hello World");
-});
+function randomC(random){
+    fetch('https://xkcd.com/info.0.json')
+    .then(res => res.json())
+    .then(body =>
+    echo ($response["title"],
+    echo ($response["year"],
+    echo ($response["img"],
+    console.log(body)))));
+}
 http.createServer(app).listen(port, function()
 {
 
