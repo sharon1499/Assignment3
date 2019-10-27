@@ -21,7 +21,7 @@ app.get('/', function(req, res)
 });
 app.get('/random', function(req, res)
 {
-    res.render("random");
+    res.render("index");
 });
 function randomC(random){
     fetch('https://xkcd.com/info.0.json')
