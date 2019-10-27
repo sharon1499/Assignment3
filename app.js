@@ -21,16 +21,13 @@ app.get('/', function(req, res)
 });
 app.get('/random', function(req, res)
 {
-    res.render("index");
+    res.render("random");
 });
 function randomC(random){
     fetch('https://xkcd.com/info.0.json')
     .then(res => res.json())
     .then(body =>
-    echo ($response["title"],
-    echo ($response["year"],
-    echo ($response["img"],
-    console.log(body)))));
+    console.log(body));
 }
 http.createServer(app).listen(port, function()
 {
