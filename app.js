@@ -25,11 +25,6 @@ app.get('Page3', function(req, res)
 {
     res.send("Hello World");
 });
-function comic(random){
-    fetch('https://xkcd.com/info.0.json')
-    .then(res => res.json())
-    .then(body => console.log(body));}
-
 http.createServer(app).listen(port, function()
 {
 
