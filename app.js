@@ -15,19 +15,33 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 // var task = ["bark", "meow"];
 // var complete = ["eat", "sleep"];
 
+var url = 'https://xkcd.com/info.0.json';
+var cTitle;
+var year;
+var image;
+
 app.get('/', function(req, res)
 {
-    res.render("index");
+    // res.render("index");
+    comic(true);
+    res.render('index',{title:cTitle, year:year, image:image});
 });
-app.get('/random', function(req, res)
+app.get('/randomComic', function(req, res)
 {
-    res.render("randomC");
+    comic(false);
+   res.render('index',{title:cTitle, year:year, image:image});
 });
-function randomC(random){
-    fetch('https://xkcd.com/info.0.json')
-    .then(res => res.json())
-    .then(body =>
-    console.log(body));
+function comic(random){
+    var comic = 'https://xkcd.com/info.0.json';
+    //var randNum = rand(1,2208);
+    var randComic = 'https://xkcd.com/'+ rand(1,2208) + '/info.0.json';
+    fetch(random ? comic : randComic)
+        .then(res => res.json())
+        .then(json =>{
+            cTitle = json.title;
+            year = json.year;
+            image = json.img;
+        });
 }
 http.createServer(app).listen(port, function()
 {
