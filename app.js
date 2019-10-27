@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ encoded: true}));
+app.use(bodyParser.urlencoded({ encoded: false}));
 
 // var task = ["bark", "meow"];
 // var complete = ["eat", "sleep"];
@@ -31,11 +31,11 @@ app.get('/randomComic', function(req, res)
     comic(false);
    res.render('index',{title:cTitle, year:year, image:image});
 });
-function comic(random){
+function comic(something){
     var comic = 'https://xkcd.com/info.0.json';
     //var randNum = rand(1,2208);
     var randComic = 'https://xkcd.com/'+ rand(1,2208) + '/info.0.json';
-    fetch(random ? comic : randComic)
+    fetch(something ? comic : randComic)
         .then(res => res.json())
         .then(json =>{
             cTitle = json.title;
