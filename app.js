@@ -41,6 +41,7 @@ function comic(random){
             cTitle = json.title;
             year = json.year;
             image = json.img;
+            console.log(json);
         });
 }
 http.createServer(app).listen(port, function()
