@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ encoded: true}));
 
 app.get('/', function(req, res)
 {
-    res.send("Hello World");
+    res.render("index");
 });
 app.get('/Page2', function(req, res)
 {
