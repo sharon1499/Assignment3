@@ -19,7 +19,7 @@ app.get('/', function(req, res)
 });
 app.get('/Page2', function(req, res)
 {
-    res.send("Hello World");
+    res.render("index");
 });
 app.get('Page3', function(req, res)
 {
