@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sharon1499/Node.git"
+    "url": "git+https://github.com/sharon1499/Assignment3.git"
   },
   "author": "sharon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sharon1499/Node/issues"
+    "url": "https://github.com/sharon1499/Assignment3/issues"
   },
   "homepage": "https://github.com/sharon1499/Assignment3#readme",
   "engines": {
