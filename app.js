@@ -24,7 +24,7 @@ var image = '';
 app.get('/', function(req, res)
 {
     // res.render("index");
-    getComic(true);
+    getComic();
     res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
