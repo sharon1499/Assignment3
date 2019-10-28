@@ -24,7 +24,7 @@ var image = '';
 app.get('/', function(req, res)
 {
     // res.render("index");
-    //comic(true);
+    getComic(true);
     res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
@@ -32,7 +32,7 @@ app.get('/randomComic', function(req, res)
     //comic(false);
    res.render('index',{title:cTitle, year:year, image:image});
 });
-function comic(something){
+function getComic(something){
     var comic = 'https://xkcd.com/info.0.json';
     //var randNum = rand(1,2208);
     var randComic = 'http://xkcd.com/'+ rand(1,2208) + '/info.0.json';
