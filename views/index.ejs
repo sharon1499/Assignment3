@@ -47,8 +47,9 @@
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
            $(document).ready(function(){
-  $("button").click(function(){
+  $("button").on('click', function (e){
                  //location.reload();
+                 e.preventDefault();
                 $.ajax({
                     type: "GET",
                     url: "/randomComic",
