@@ -47,15 +47,14 @@
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
            $(document).ready(function(){
-  $("button").on('click', function (e){
+  $("button").click(function(){
                  //location.reload();
-                 e.preventDefault();
                 $.ajax({
                     type: "GET",
                     url: "/randomComic",
                     data: {},
                     success: function (data) {
-                        $.html(data);
+                        $('randomC').html(data);
                     },
                     error: function () {
                         alert("Error");
@@ -66,6 +65,8 @@
            });
         </script>
         <button id="change" >New Comic</button>
+        <div id="randomC">
         <% include index2 %>
+        </div>
 </body>
 </html>
