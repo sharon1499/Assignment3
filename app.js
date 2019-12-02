@@ -26,10 +26,10 @@ app.get('/', function(req, res)
     // res.render("index");
     fetch('https://xkcd.com/info.0.json')
 .then(res => res.json())
-.then(data => {
-     cTitle = data.title;
-     year = data.year;
-    image = data.img;
+.then(json => {
+     cTitle = json.title;
+     year = json.year;
+    image = json.img;
 });
 
     res.render('index',{title: cTitle, year: year, image: image});
@@ -38,10 +38,10 @@ app.get('/randomComic', function(req, res)
 {
    fetch('http://xkcd.com/'+ rand(1,2208) + '/info.0.json')
 .then(res => res.json())
-.then(data => {
-     cTitle = data.title;
-     year = data.year;
-    image = data.img;
+.then(json => {
+     cTitle = json.title;
+     year = json.year;
+    image = json.img;
 });
    res.render('index',{title:cTitle, year:year, image: image});
 });
