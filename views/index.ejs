@@ -50,9 +50,12 @@
   $("button").click(function(){
                  //location.reload();
                 $.ajax({
+                    url: "/includes/functions.php",
+                    data: {'random': true},
+                    dataType: "HTML",
                     type: "GET",
-                    url: "/",
-                    data: {},
+                    //url: "/",
+                    //data: {},
                     //dataType: "HTML",
                     success: function (data) {
                         $.html(data);

@@ -25,7 +25,7 @@ app.get('/', function(req, res)
 {
     // res.render("index");
     getComic(true);
-    res.render('index',{ctitle: cTitle, year: year, image: image});
+    res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
 {
