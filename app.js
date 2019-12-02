@@ -30,10 +30,6 @@ app.get('/', function(req, res)
      cTitle = data.title;
      year = data.year;
     image = data.img;
-     
-
-    
-
 });
 
     res.render('index',{title: cTitle, year: year, image: image});
@@ -47,7 +43,7 @@ app.get('/randomComic', function(req, res)
      year = data.year;
     image = data.img;
 });
-   res.render('index',{title:cTitle, year:year, image:image});
+   res.render('index',{title:cTitle, year:year, image: image});
 });
 
 http.createServer(app).listen(port, function()
