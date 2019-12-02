@@ -1,2 +1,2 @@
-# Assignment3
-#Link -> https://csu-assignment3.herokuapp.com/
+Assignment3
+https://csu-assignment3.herokuapp.com/
