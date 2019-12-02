@@ -23,6 +23,7 @@
 		<h1 class="display-4">XKCD Comic Generator</h1>
 	</div>
 </head>
+
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand navbar-collapse" href="#">Navbar</a>
@@ -40,9 +41,7 @@
 			</ul>
 		</div>
 	</nav>
-
-    <% include index2 %>
-
+    <% include index2.ejs %>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
@@ -54,10 +53,6 @@
                     url: "/includes/functions.php",
                     data: {'random': true},
                     dataType: "HTML",
-                    //type: "GET",
-                    //url: "/",
-                    //data: {},
-                    //dataType: "HTML",
                     success: function (data) {
                         $.html(data);
                     },
@@ -69,7 +64,5 @@
             });
            });
         </script>
-        
-    </script>
 </body>
 </html>

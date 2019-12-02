@@ -29,7 +29,7 @@ app.get('/', function(req, res)
 });
 app.get('/randomComic', function(req, res)
 {
-   getComic(false);
+    getComic(false);
    res.render('index',{title:cTitle, year:year, image:image});
 });
 function getComic(something){
@@ -39,9 +39,9 @@ function getComic(something){
     fetch(something ? comic : randComic)
         .then(res => res.json())
         .then(json =>{
-        year = json.year;
-        cTitle = json.title;
-        image = json.img;
+            cTitle = json.title;
+            year = json.year;
+            image = json.img;
             //console.log(json);
         });
 }
