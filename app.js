@@ -24,12 +24,12 @@ var image = '';
 app.get('/', function(req, res)
 {
     // res.render("index");
-    //getComic(true);
+    getComic(true);
     res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
 {
-   // getComic(false);
+   getComic(false);
    res.render('index',{title:cTitle, year:year, image:image});
 });
 function getComic(something){
