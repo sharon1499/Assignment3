@@ -47,15 +47,15 @@ app.get('/randomComic', function(req, res)
 //});
    res.render('index',{title:cTitle, year:year, image: image});
 });
-function fetchComic(isCurrent){
+function fetchComic(Guess){
     var currentComic = 'http://xkcd.com/info.0.json';
-    var randComic = 'http://xkcd.com/'+Math.floor((Math.random() * 2220) + 1)+'/info.0.json';
-     fetch(isCurrent ? currentComic : randComic)
+    var randomComic = 'http://xkcd.com/'+Math.floor((Math.random() * 2220) + 1)+'/info.0.json';
+     fetch(Guess ? currentComic : randomComic)
         .then(res => res.json())
         .then(json =>{
-        year = json.year;
-        cTitle = json.title;
-        image = json.img;
+            cTitle = json.title;
+            year = json.year;
+            image = json.img;
        });
 }
 http.createServer(app).listen(port, function()
