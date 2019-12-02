@@ -40,22 +40,16 @@ app.get('/', function(req, res)
 });
 app.get('/randomComic', function(req, res)
 {
-   //getComic(false);
+   fetch('http://xkcd.com/'+ rand(1,2208) + '/info.0.json')
+.then(res => res.json())
+.then(data => {
+     cTitle = data.title;
+     year = data.year;
+    image = data.img;
+});
    res.render('index',{title:cTitle, year:year, image:image});
 });
-function getComic(something){
-    var comic = 'https://xkcd.com/info.0.json';
-    //var randNum = rand(1,2208);
-    var randComic = 'http://xkcd.com/'+ rand(1,2208) + '/info.0.json';
-    fetch(something ? comic : randComic)
-        .then(res => res.json())
-        .then(json =>{
-            cTitle = json.title;
-            year = json.year;
-            image = json.img;
-            //console.log(json);
-        });
-}
+
 http.createServer(app).listen(port, function()
 {
 
