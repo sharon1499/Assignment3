@@ -54,7 +54,7 @@
                     url: "/randomComic",
                     data: {},
                     success: function (data) {
-                        $('randomC').html(data);
+                        document.getElementById('randomC').innerhtml = data;
                     },
                     error: function () {
                         alert("Error");
@@ -65,7 +65,7 @@
            });
         </script>
         <button id="change" >New Comic</button>
-        <div id="randomC">
+        <div id="randomC" style="margin 20px;">
         <% include index2 %>
         </div>
 </body>
