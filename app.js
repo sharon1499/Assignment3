@@ -24,12 +24,23 @@ var image = '';
 app.get('/', function(req, res)
 {
     // res.render("index");
-    getComic(true);
+    fetch('https://xkcd.com/info.0.json')
+.then(res => res.json())
+.then(data => {
+     cTitle = data.title;
+     year = data.year;
+    image = data.img;
+     
+
+    
+
+});
+
     res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
 {
-   getComic(false);
+   //getComic(false);
    res.render('index',{title:cTitle, year:year, image:image});
 });
 function getComic(something){
