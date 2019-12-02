@@ -54,7 +54,8 @@
                     url: "/randomComic",
                     data: {},
                     success: function (data) {
-                        document.getElementById('randomC').innerhtml = data;
+                        //$.html(data)
+                        $('div #randomC').html(data)
                     },
                     error: function () {
                         alert("Error");
