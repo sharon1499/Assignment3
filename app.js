@@ -24,28 +24,40 @@ var image = '';
 app.get('/', function(req, res)
 {
     // res.render("index");
-    fetch('https://xkcd.com/info.0.json')
+    /*fetch('https://xkcd.com/info.0.json')
 .then(res => res.json())
 .then(json => {
      cTitle = json.title;
      year = json.year;
-    image = json.img;
-});
+    image = json.img;*/
+    fetchComic(true);
+//});
 
     res.render('index',{title: cTitle, year: year, image: image});
 });
 app.get('/randomComic', function(req, res)
 {
-   fetch('http://xkcd.com/'+ rand(1,2208) + '/info.0.json')
+   /*fetch('http://xkcd.com/'+ rand(1,2208) + '/info.0.json')
 .then(res => res.json())
 .then(json => {
      cTitle = json.title;
      year = json.year;
-    image = json.img;
-});
+    image = json.img;*/
+    fetchComic(false);
+//});
    res.render('index',{title:cTitle, year:year, image: image});
 });
-
+function fetchComic(isCurrent){
+    var currentComic = 'http://xkcd.com/info.0.json';
+    var randComic = 'http://xkcd.com/'+Math.floor((Math.random() * 2220) + 1)+'/info.0.json';
+     fetch(isCurrent ? currentComic : randComic)
+        .then(res => res.json())
+        .then(json =>{
+        year = json.year;
+        cTitle = json.title;
+        image = json.img;
+       });
+}
 http.createServer(app).listen(port, function()
 {
 
