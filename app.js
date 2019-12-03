@@ -52,10 +52,10 @@ function fetchComic(){
     var randomComic = 'http://xkcd.com/'+Math.floor((Math.random() * 2220) + 1)+'/info.0.json';
      fetch(Guess ? currentComic : randomComic)
         .then(res => res.json())
-        .then(data =>{
-            cTitle = data.title;
-            year = data.year;
-            image = data.img;
+        .then(json =>{
+            cTitle = json.title;
+            year = json.year;
+            image = json.img;
        });
 }
 http.createServer(app).listen(port, function()
