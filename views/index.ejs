@@ -56,7 +56,7 @@
                     data: {},
                     success: function (data) {
                         //$.html(data)
-                        $('#randomC').html(data)
+                        $('div').html(data)
                     },
                     error: function () {
                         alert("Error");
@@ -68,7 +68,6 @@
         </script>
         <div>
         <button id="change" >New Comic</button>
-        <div id="randomC" style="margin 20px;">
         <% include index2 %>
         </div>
         <div>
