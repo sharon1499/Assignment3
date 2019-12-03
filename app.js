@@ -30,7 +30,7 @@ app.get('/', function(req, res)
      cTitle = json.title;
      year = json.year;
     image = json.img;*/
-    fetchComic(true);
+    fetchComic();
 //});
 
     res.render('index',{title: cTitle, year: year, image: image});
@@ -43,19 +43,19 @@ app.get('/randomComic', function(req, res)
      cTitle = json.title;
      year = json.year;
     image = json.img;*/
-    fetchComic(false);
+    fetchComic();
 //});
    res.render('index',{title:cTitle, year:year, image: image});
 });
-function fetchComic(Guess){
+function fetchComic(){
     var currentComic = 'http://xkcd.com/info.0.json';
     var randomComic = 'http://xkcd.com/'+Math.floor((Math.random() * 2220) + 1)+'/info.0.json';
      fetch(Guess ? currentComic : randomComic)
         .then(res => res.json())
-        .then(json =>{
-            cTitle = json.title;
-            year = json.year;
-            image = json.img;
+        .then(data =>{
+            cTitle = data.title;
+            year = data.year;
+            image = data.img;
        });
 }
 http.createServer(app).listen(port, function()
