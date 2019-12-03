@@ -47,8 +47,8 @@
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
            $(document).ready(function(){
-  $("button").on('click', function (e) {
-            e.preventDefault();
+  $("button").click(function () {
+            //e.preventDefault();
                  //location.reload();
                 $.ajax({
                     type: "GET",
