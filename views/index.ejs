@@ -56,7 +56,7 @@
                     data: {},
                     success: function (data) {
                         //$.html(data)
-                        $.html(data)
+                        $('div #loaded').html(data)
                     },
                     error: function () {
                         alert("Error");
@@ -68,7 +68,9 @@
         </script>
         <div style='margin: 20px;'>
         <button id="change" >New Comic</button>
-        <% include index2.ejs %>
+        <div id="loaded">
+        <% include index2 %>
+        </div>
         </div>
 </body>
 </html>
