@@ -45,7 +45,29 @@
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+<script>
+           $(document).ready(function(){
+  $("button").click(function () {
+            //e.preventDefault();
+                 //location.reload();
+                $.ajax({
+                    type: "GET",
+                    url: "/",
+                    data: {},
+                    success: function (data) {
+                        //$.html(data)
+                        $.html(data)
+                    },
+                    error: function () {
+                        alert("Error");
+                    }
+                });
+                return false;
+            });
+           });
+        </script>
+        <!---<div> -->
+        <button id="change" class="btn btn-success">Generate Comic</button>
         <!---<div id="randomC" style="margin 20px;">-->
         <% include index2 %>
         <!----</div>

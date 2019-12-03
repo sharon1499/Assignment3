@@ -45,7 +45,7 @@ app.get('/randomComic', function(req, res)
     image = json.img;*/
     fetchComic(false);
 //});
-   res.render('index',{title:cTitle, year:year, image: image});
+   res.render('index3',{title:cTitle, year:year, image: image});
 });
 function fetchComic(Guess){
     var currentComic = 'http://xkcd.com/info.0.json';
